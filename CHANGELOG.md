@@ -13,6 +13,19 @@
 
 -->
 
+## 2023.12.1
+
+### General
+- Enhance: ローカリゼーションの更新
+- Fix: 自分のdirect noteがuser list timelineに追加されない
+
+### Client
+- 
+
+### Server
+- Enhance: センシティブワードの設定がハッシュタグトレンドにも適用されるようになりました
+- Fix: 1702718871541-ffVisibility.jsのdownが壊れている
+
 ## 2023.12.0
 
 ### Note
