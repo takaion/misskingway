@@ -629,6 +629,7 @@ export interface Locale {
     "small": string;
     "generateAccessToken": string;
     "permission": string;
+    "adminPermission": string;
     "enableAll": string;
     "disableAll": string;
     "tokenRequested": string;
