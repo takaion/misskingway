@@ -9,7 +9,7 @@ SPDX-License-Identifier: AGPL-3.0-only
 	v-show="!isDeleted"
 	ref="el"
 	v-hotkey="keymap"
-	:class="[$style.root, { [$style.showActionsOnlyHover]: defaultStore.state.showNoteActionsOnlyHover }]"
+	:class="[$style.root, { [$style.showActionsOnlyHover]: defaultStore.state.showNoteActionsOnlyHover }, note.visibility === 'home' ? $style.home : note.visibility === 'followers' ? $style.followers : note.visibility === 'specified' ? $style.specified : '']"
 	:tabindex="!isDeleted ? '-1' : undefined"
 >
 	<MkNoteSub v-if="appearNote.reply && !renoteCollapsed" :note="appearNote.reply" :class="$style.replyTo"/>
@@ -588,6 +588,16 @@ function emitUpdReaction(emoji: string, delta: number) {
 			visibility: visible;
 		}
 	}
+}
+
+.home {
+	background-color: rgba(0, 255, 255, 0.10);
+}
+.followers {
+	background-color: rgba(255, 255, 100, 0.10);
+}
+.specified {
+	background-color: rgba(255, 0, 255, 0.10);
 }
 
 .tip {
