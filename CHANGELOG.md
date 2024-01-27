@@ -15,47 +15,21 @@
 
 ## 202x.x.x (Unreleased)
 
-### General
-- Feat: [mCaptcha](https://github.com/mCaptcha/mCaptcha)のサポートを追加
-- Fix: リストライムラインの「リノートを表示」が正しく機能しない問題を修正
+## 2023.12.0-mk2
+- fix: ブロックされててもReNoteできる問題を修正 (cheery picked from misskey-dev/misskey)
+- fix: 自分のダイレクトノートがリストのタイムラインに追加されない問題を修正 (cheery picked from misskey-dev/misskey)
+- fix: ロールアサイン時の通知で，ロールアイコンが縮小されずに表示される問題を修正 (cheery picked from misskey-dev/misskey)
+- fix: リアクションの受け入れ設定「非センシティブのみ (リモートはいいねのみ)」が機能していない問題を修正 (cheery picked from misskey-dev/misskey)
+- enhance: ハッシュタグ入力時に、本文の末尾の行に何も書かれていない場合は新たにスペースを追加しないように (cheery picked from misskey-dev/misskey)
+- fix: `drive/files/update`でファイル名のバリデーションが機能していない問題を修正 (cheery picked from misskey-dev/misskey)
+- enhance: カスタム絵文字追加画面の「タグ」の説明を追加 (cheery picked from misskey-dev/misskey)
+- enhance: チャンネルノートのピン留めをノートのメニューからできるように (cheery picked from misskey-dev/misskey)
+- fix: モデレーターがユーザーのアバター・バナーを未設定にできる機能が表示されていなかった問題を修正 (cheery picked from misskey-dev/misskey)
+- enhance: 管理者の場合はAPI Tokenの発行画面で管理機能に関する権限を付与できるように (cheery picked from misskey-dev/misskey)
+- enhance: MFMの属性でオートコンプリートが利用できるように (cheery picked from misskey-dev/misskey)
 
-### Client
-- Enhance: ハッシュタグ入力時に、本文の末尾の行に何も書かれていない場合は新たにスペースを追加しないように
-- Enhance: チャンネルノートのピン留めをノートのメニューからできるように
-- Enhance: 管理者の場合はAPI tokenの発行画面で管理機能に関する権限を付与できるように
-- Enhance: MFMの属性でオートコンプリートが使用できるように #12735
-- Fix: ネイティブモードの絵文字がモノクロにならないように
-- Fix: v2023.12.0で追加された「モデレーターがユーザーのアイコンもしくはバナー画像を未設定状態にできる機能」が管理画面上で正しく表示されていない問題を修正
-- Enhance: チャンネルノートのピン留めをノートのメニューからできるよ
-
-### Server
-- Enhance: 連合先のレートリミットに引っかかった際にリトライするようになりました
-- Enhance: ActivityPub Deliver queueでBodyを事前処理するように (#12916)
-- Enhance: クリップをエクスポートできるように
-- Fix: `drive/files/update`でファイル名のバリデーションが機能していない問題を修正
-
-## 2023.12.2
-
-### General
-- v2023.12.1でDockerを利用してサーバーを起動できない問題を修正
-
-### Client
-- Enhance: 検索画面においてEnterキー押下で検索できるように
-
-## 2023.12.1
-
-### General
-- Enhance: ローカリゼーションの更新
-- Fix: 自分のdirect noteがuser list timelineに追加されない
-
-### Client
-- 
-
-### Server
-- Enhance: センシティブワードの設定がハッシュタグトレンドにも適用されるようになりました
-- Fix: 1702718871541-ffVisibility.jsのdownが壊れている
-- Fix:「非センシティブのみ（リモートはいいねのみ）」を設定していても、センシティブに設定されたカスタム絵文字をリアクションできる問題を修正
-- Fix: ロールアサイン時の通知で，ロールアイコンが縮小されずに表示される問題を修正
+## 2023.12.0-mk1
+- enhance: ホーム・フォロワー限定・ダイレクトのノートの背景に色をつける処理を追加
 
 ## 2023.12.0
 
