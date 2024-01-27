@@ -9,7 +9,7 @@ SPDX-License-Identifier: AGPL-3.0-only
 	v-show="!isDeleted"
 	ref="el"
 	v-hotkey="keymap"
-	:class="[$style.root, { [$style.showActionsOnlyHover]: defaultStore.state.showNoteActionsOnlyHover }, note.visibility === 'home' ? $style.home : note.visibility === 'followers' ? $style.followers : note.visibility === 'specified' ? $style.specified : '']"
+	:class="[$style.root, { [$style.showActionsOnlyHover]: defaultStore.state.showNoteActionsOnlyHover }]"
 	:tabindex="!isDeleted ? '-1' : undefined"
 >
 	<MkNoteSub v-if="appearNote.reply && !renoteCollapsed" :note="appearNote.reply" :class="$style.replyTo"/>
@@ -45,7 +45,7 @@ SPDX-License-Identifier: AGPL-3.0-only
 		<MkAvatar :class="$style.collapsedRenoteTargetAvatar" :user="appearNote.user" link preview/>
 		<Mfm :text="getNoteSummary(appearNote)" :plain="true" :nowrap="true" :author="appearNote.user" :nyaize="'respect'" :class="$style.collapsedRenoteTargetText" @click="renoteCollapsed = false"/>
 	</div>
-	<article v-else :class="$style.article" @contextmenu.stop="onContextmenu">
+	<article v-else :class="[$style.article, note.visibility === 'home' ? $style.home : note.visibility === 'followers' ? $style.followers : note.visibility === 'specified' ? $style.specified : '']" @contextmenu.stop="onContextmenu">
 		<div v-if="appearNote.channel" :class="$style.colorBar" :style="{ background: appearNote.channel.color }"></div>
 		<MkAvatar :class="$style.avatar" :user="appearNote.user" :link="!mock" :preview="!mock"/>
 		<div :class="$style.main">

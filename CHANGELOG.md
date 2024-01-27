@@ -15,6 +15,9 @@
 
 ## 202x.x.x (Unreleased)
 
+## 2023.12.0-mk3 (Unreleased)
+- fix: 「ノートを離して表示」をオンにしている場合にノートの色分けが行われない問題を修正
+
 ## 2023.12.0-mk2
 - fix: ブロックされててもReNoteできる問題を修正 (cheery picked from misskey-dev/misskey)
 - fix: 自分のダイレクトノートがリストのタイムラインに追加されない問題を修正 (cheery picked from misskey-dev/misskey)
