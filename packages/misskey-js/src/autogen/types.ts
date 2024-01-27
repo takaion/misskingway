@@ -2,8 +2,8 @@
 /* eslint @typescript-eslint/no-explicit-any: 0 */
 
 /*
- * version: 2023.11.0-beta.3
- * generatedAt: 2023-12-08T04:57:48.142Z
+ * version: 2023.12.2
+ * generatedAt: 2024-01-02T08:53:56.447Z
  */
 
 /**
@@ -3768,13 +3768,14 @@ export type components = {
        * @example xxxxxxxxxx
        */
       channelId?: string | null;
-      channel?: {
+      channel?: ({
         id: string;
         name: string;
         color: string;
         isSensitive: boolean;
         allowRenoteToExternal: boolean;
-      } | null;
+        userId: string | null;
+      }) | null;
       localOnly?: boolean;
       reactionAcceptance: string | null;
       reactions: Record<string, never>;
@@ -4430,6 +4431,9 @@ export type operations = {
             enableActiveEmailValidation: boolean;
             enableVerifymailApi: boolean;
             verifymailAuthKey: string | null;
+            enableTruemailApi: boolean;
+            truemailInstance: string | null;
+            truemailAuthKey: string | null;
             enableChartsForRemoteUser: boolean;
             enableChartsForFederatedInstances: boolean;
             enableServerMachineStats: boolean;
@@ -8202,6 +8206,9 @@ export type operations = {
           enableActiveEmailValidation?: boolean;
           enableVerifymailApi?: boolean;
           verifymailAuthKey?: string | null;
+          enableTruemailApi?: boolean;
+          truemailInstance?: string | null;
+          truemailAuthKey?: string | null;
           enableChartsForRemoteUser?: boolean;
           enableChartsForFederatedInstances?: boolean;
           enableServerMachineStats?: boolean;

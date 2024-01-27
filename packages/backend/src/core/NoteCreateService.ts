@@ -293,7 +293,7 @@ export class NoteCreateService implements OnApplicationShutdown {
 		}
 
 		// Check blocking
-		if (this.isQuote(data)) {
+		if (data.renote && !this.isQuote(data)) {
 			if (data.renote.userHost === null) {
 				if (data.renote.userId !== user.id) {
 					const blocked = await this.userBlockingService.checkBlocked(data.renote.userId, user.id);
@@ -912,6 +912,7 @@ export class NoteCreateService implements OnApplicationShutdown {
 				// ダイレクトのとき、そのリストが対象外のユーザーの場合
 				if (
 					note.visibility === 'specified' &&
+					note.userId !== userListMembership.userListUserId &&
 					!note.visibleUserIds.some(v => v === userListMembership.userListUserId)
 				) continue;
 

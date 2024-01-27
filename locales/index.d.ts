@@ -629,6 +629,7 @@ export interface Locale {
     "small": string;
     "generateAccessToken": string;
     "permission": string;
+    "adminPermission": string;
     "enableAll": string;
     "disableAll": string;
     "tokenRequested": string;
@@ -672,6 +673,7 @@ export interface Locale {
     "other": string;
     "regenerateLoginToken": string;
     "regenerateLoginTokenDescription": string;
+    "theKeywordWhenSearchingForCustomEmoji": string;
     "setMultipleBySeparatingWithSpace": string;
     "fileIdOrUrl": string;
     "behavior": string;
@@ -1745,6 +1747,7 @@ export interface Locale {
         "disposable": string;
         "mx": string;
         "smtp": string;
+        "banned": string;
     };
     "_ffVisibility": {
         "public": string;
