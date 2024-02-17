@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: syuilo and other misskey contributors
+ * SPDX-FileCopyrightText: syuilo and misskey-project
  * SPDX-License-Identifier: AGPL-3.0-only
  */
 
@@ -11,12 +11,12 @@ import { NoteEntityService } from '@/core/entities/NoteEntityService.js';
 import { DI } from '@/di-symbols.js';
 import { bindThis } from '@/decorators.js';
 import { isInstanceMuted } from '@/misc/is-instance-muted.js';
-import Channel from '../channel.js';
+import Channel, { type MiChannelService } from '../channel.js';
 
 class UserListChannel extends Channel {
 	public readonly chName = 'userList';
 	public static shouldShare = false;
-	public static requireCredential = false;
+	public static requireCredential = false as const;
 	private listId: string;
 	private membershipsMap: Record<string, Pick<MiUserListMembership, 'withReplies'> | undefined> = {};
 	private listUsersClock: NodeJS.Timeout;
@@ -43,7 +43,7 @@ class UserListChannel extends Channel {
 		this.withRenotes = params.withRenotes ?? true;
 
 		// Check existence and owner
-		const listExist = await this.userListsRepository.exist({
+		const listExist = await this.userListsRepository.exists({
 			where: {
 				id: this.listId,
 				userId: this.user!.id,
@@ -141,9 +141,10 @@ class UserListChannel extends Channel {
 }
 
 @Injectable()
-export class UserListChannelService {
+export class UserListChannelService implements MiChannelService<false> {
 	public readonly shouldShare = UserListChannel.shouldShare;
 	public readonly requireCredential = UserListChannel.requireCredential;
+	public readonly kind = UserListChannel.kind;
 
 	constructor(
 		@Inject(DI.userListsRepository)

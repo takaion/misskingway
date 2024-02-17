@@ -1,5 +1,5 @@
 <!--
-SPDX-FileCopyrightText: syuilo and other misskey contributors
+SPDX-FileCopyrightText: syuilo and misskey-project
 SPDX-License-Identifier: AGPL-3.0-only
 -->
 
@@ -11,7 +11,7 @@ SPDX-License-Identifier: AGPL-3.0-only
 	:withOkButton="true"
 	:okButtonDisabled="false"
 	:canClose="false"
-	@close="dialog.close()"
+	@close="dialog?.close()"
 	@closed="$emit('closed')"
 	@ok="ok()"
 >
@@ -33,12 +33,12 @@ SPDX-License-Identifier: AGPL-3.0-only
 				<MkButton inline @click="enableAll">{{ i18n.ts.enableAll }}</MkButton>
 			</div>
 			<div class="_gaps_s">
-				<MkSwitch v-for="kind in Object.keys(permissionSwitches)" :key="kind" v-model="permissionSwitches[kind]">{{ i18n.t(`_permissions.${kind}`) }}</MkSwitch>
+				<MkSwitch v-for="kind in Object.keys(permissionSwitches)" :key="kind" v-model="permissionSwitches[kind]">{{ i18n.ts._permissions[kind] }}</MkSwitch>
 			</div>
 			<div v-if="iAmAdmin" :class="$style.adminPermissions">
 				<div :class="$style.adminPermissionsHeader"><b>{{ i18n.ts.adminPermission }}</b></div>
 				<div class="_gaps_s">
-					<MkSwitch v-for="kind in Object.keys(permissionSwitchesForAdmin)" :key="kind" v-model="permissionSwitchesForAdmin[kind]">{{ i18n.t(`_permissions.${kind}`) }}</MkSwitch>
+					<MkSwitch v-for="kind in Object.keys(permissionSwitchesForAdmin)" :key="kind" v-model="permissionSwitchesForAdmin[kind]">{{ i18n.ts._permissions[kind] }}</MkSwitch>
 				</div>
 			</div>
 		</div>
@@ -61,7 +61,7 @@ const props = withDefaults(defineProps<{
 	title?: string | null;
 	information?: string | null;
 	initialName?: string | null;
-	initialPermissions?: string[] | null;
+	initialPermissions?: (typeof Misskey.permissions)[number][] | null;
 }>(), {
 	title: null,
 	information: null,
@@ -106,7 +106,7 @@ function ok(): void {
 			...(iAmAdmin ? Object.keys(permissionSwitchesForAdmin.value).filter(p => permissionSwitchesForAdmin.value[p]) : []),
 		],
 	});
-	dialog.value.close();
+	dialog.value?.close();
 }
 
 function disableAll(): void {
