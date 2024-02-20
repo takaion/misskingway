@@ -14,6 +14,10 @@
 
 ## 202x.x.x (Unreleased)
 
+## 2024.2.0-mk2
+- Fix: MFMのオートコンプリートが出るべき状況で出ないことがある問題を修正 (cheery picked from misskey-dev/misskey)
+- Fix: 画面表示後最初の音声再生が爆音になることがある問題を修正 (cheery picked from misskey-dev/misskey)
+
 ## 2024.2.0-mk1
 - 2023.12.0-mk3 + 2024.2.0
 
@@ -35,11 +39,6 @@
 
 ## 2023.12.0-mk1
 - enhance: ホーム・フォロワー限定・ダイレクトのノートの背景に色をつける処理を追加
-
-## 202x.x.x (unreleased)
-
-### Client
-- Fix: MFMのオートコンプリートが出るべき状況で出ないことがある問題を修正
 
 ## 2024.2.0
 
