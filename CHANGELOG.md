@@ -1,18 +1,10 @@
-<!--
-## 202x.x.x (unreleased)
-
-### General
--
-
-### Client
-- 
-
-### Server
--
-
--->
-
 ## 202x.x.x (Unreleased)
+
+## 2024.2.0-mk2
+- Fix: MFMのオートコンプリートが出るべき状況で出ないことがある問題を修正 (cheery picked from misskey-dev/misskey)
+- Fix: 画面表示後最初の音声再生が爆音になることがある問題を修正 (cheery picked from misskey-dev/misskey)
+- Fix: 絵文字サジェストの順位で、絵文字自体の名前が同じものよりもタグで一致しているものが優先されてしまう問題を修正 (cheery picked from misskey-dev/misskey)
+- Fix: Unicode絵文字とカスタム絵文字の名前が重複したときにカスタム絵文字がオートコンプリートにサジェストされない問題を修正
 
 ## 2024.2.0-mk1
 - 2023.12.0-mk3 + 2024.2.0
