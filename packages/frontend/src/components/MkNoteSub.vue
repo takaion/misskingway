@@ -4,7 +4,7 @@ SPDX-License-Identifier: AGPL-3.0-only
 -->
 
 <template>
-<div v-if="!muted" :class="[$style.root, { [$style.children]: depth > 1 }]">
+<div v-if="!muted" :class="[$style.root, { [$style.children]: depth > 1 }, note.visibility === 'home' ? $style.home : note.visibility === 'followers' ? $style.followers : note.visibility === 'specified' ? $style.specified : '']">
 	<div :class="$style.main">
 		<div v-if="note.channel" :class="$style.colorBar" :style="{ background: note.channel.color }"></div>
 		<MkAvatar :class="$style.avatar" :user="note.user" link preview/>
@@ -87,6 +87,16 @@ if (props.detail) {
 		padding: 10px 0 0 16px;
 		font-size: 1em;
 	}
+}
+
+.home {
+	background-color: rgba(0, 255, 255, 0.10);
+}
+.followers {
+	background-color: rgba(255, 255, 100, 0.10);
+}
+.specified {
+	background-color: rgba(255, 0, 255, 0.10);
 }
 
 .main {
