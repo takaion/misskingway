@@ -100,6 +100,7 @@ defineExpose<WidgetComponentExpose>({
 	overflow: hidden;
 	min-height: calc(calc(calc(50px * 3) - 8px) + calc(var(--margin) * 2));
 }
+
 .bdayFGrid {
 	display: grid;
 	grid-template-columns: repeat(6, 42px);
@@ -107,6 +108,27 @@ defineExpose<WidgetComponentExpose>({
 	place-content: center;
 	gap: 8px;
 	margin: var(--margin) auto;
+}
+
+@container (max-width: 290px) {
+	.bdayFGrid {
+		grid-template-columns: repeat(5, 42px);
+		grid-template-rows: repeat(4, 42px);
+	}
+}
+
+@container (max-width: 250px) {
+	.bdayFGrid {
+		grid-template-columns: repeat(4, 42px);
+		grid-template-rows: repeat(5, 42px);
+	}
+}
+
+@container (max-width: 200px) {
+	.bdayFGrid {
+		grid-template-columns: repeat(3, 42px);
+		grid-template-rows: repeat(6, 42px);
+	}
 }
 
 .bdayFFallback {
