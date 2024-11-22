@@ -1,4 +1,6 @@
 ## Unreleased
+- enhance: 📛のエイリアスとして `tofu_on_fire` を追加
+
 ## 2024.8.0-mk2
 - fix(backend): ロールのバッジを表示する条件を緩和
 
