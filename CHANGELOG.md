@@ -1,5 +1,6 @@
 ## Unreleased
-- 
+- frontend: `unknown.png`を`public/assets`に移動
+  - この変更によりパスベースのルーティングでカスタマイズできます
 
 ## 2025.8.0-mk1
 - 2025.4.0-mk1 + 2024.8.0

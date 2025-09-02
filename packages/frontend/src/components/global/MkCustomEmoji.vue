@@ -7,7 +7,7 @@ SPDX-License-Identifier: AGPL-3.0-only
 <img
 	v-if="shouldMute"
 	:class="[$style.root, { [$style.normal]: normal, [$style.noStyle]: noStyle }]"
-	src="/client-assets/unknown.png"
+	src="/assets/unknown.png"
 	:title="alt"
 	draggable="false"
 	style="-webkit-user-drag: none;"
