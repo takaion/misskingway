@@ -1,4 +1,6 @@
 ## Unreleased
+
+## 2025.8.0-mk2
 - frontend: `unknown.png`を`public/assets`に移動
   - この変更によりパスベースのルーティングでカスタマイズできます
 - frontend: エラー画像が引き伸ばされてしまう問題に対応
