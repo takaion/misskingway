@@ -1,5 +1,9 @@
 ## Unreleased
 
+## 2025.9.0-mk1
+- 2025.8.0-mk2 + 2025.9.0
+  - 🎉Misskingwayから初Contribution: https://github.com/misskey-dev/misskey/pull/16502
+
 ## 2025.8.0-mk2
 - frontend: `unknown.png`を`public/assets`に移動
   - この変更によりパスベースのルーティングでカスタマイズできます
