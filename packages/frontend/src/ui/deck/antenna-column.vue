@@ -9,7 +9,14 @@ SPDX-License-Identifier: AGPL-3.0-only
 		<i class="ti ti-antenna"></i><span style="margin-left: 8px;">{{ column.name || column.timelineNameCache || i18n.ts._deck._columns.antenna }}</span>
 	</template>
 
-	<MkStreamingNotesTimeline v-if="column.antennaId" ref="timeline" src="antenna" :antenna="column.antennaId"/>
+	<MkStreamingNotesTimeline
+		v-if="column.antennaId"
+		ref="timeline"
+		src="antenna"
+		:antenna="column.antennaId"
+		:sound="true"
+		:customSound="soundSetting"
+	/>
 </XColumn>
 </template>
 

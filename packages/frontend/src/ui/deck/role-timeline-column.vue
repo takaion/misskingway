@@ -9,7 +9,14 @@ SPDX-License-Identifier: AGPL-3.0-only
 		<i class="ti ti-badge"></i><span style="margin-left: 8px;">{{ column.name || column.timelineNameCache || i18n.ts._deck._columns.roleTimeline }}</span>
 	</template>
 
-	<MkStreamingNotesTimeline v-if="column.roleId" ref="timeline" src="role" :role="column.roleId"/>
+	<MkStreamingNotesTimeline
+		v-if="column.roleId"
+		ref="timeline"
+		src="role"
+		:role="column.roleId"
+		:sound="true"
+		:customSound="soundSetting"
+	/>
 </XColumn>
 </template>
 
