@@ -9,7 +9,15 @@ SPDX-License-Identifier: AGPL-3.0-only
 		<i class="ti ti-list"></i><span style="margin-left: 8px;">{{ column.name || column.timelineNameCache || i18n.ts._deck._columns.list }}</span>
 	</template>
 
-	<MkStreamingNotesTimeline v-if="column.listId" ref="timeline" src="list" :list="column.listId" :withRenotes="withRenotes"/>
+	<MkStreamingNotesTimeline
+		v-if="column.listId"
+		ref="timeline"
+		src="list"
+		:list="column.listId"
+		:withRenotes="withRenotes"
+		:sound="true"
+		:customSound="soundSetting"
+	/>
 </XColumn>
 </template>
 
