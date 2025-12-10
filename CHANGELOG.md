@@ -1,4 +1,8 @@
 ## Unreleased
+### Client
+- Fix: 特定の条件下でMisskeyが起動せず空白のページが表示されることがある問題を軽減 (cheery picked from MisskeyIO/misskey)
+- Fix: 初回読み込み時などに、言語設定で不整合が発生することがある問題を修正 (cheery picked from misskey-dev/misskey)
+
 ## 2025.9.0-mk2
 - fix(frontend): デッキの新着ノート通知の設定ができるカラムで音が鳴らない問題を修正
 
