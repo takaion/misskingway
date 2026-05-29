@@ -188,7 +188,39 @@ export function getNoteMenu(props: {
 
 	const cleanups = [] as (() => void)[];
 
+	/** 他人のノートを消す時専用の処理 */
+	function delOtherUserNote(): void {
+		os.confirm({
+			type: 'warning',
+			text: i18n.ts.noteDeleteConfirm,
+		}).then(({ canceled }) => {
+			if (canceled || $i == null) return;
+			os.inputText({
+				text: i18n.tsx.typeToConfirm({ x: appearNote.username }),
+			}).then((typed) => {
+				if (typed.canceled) return;
+				if (typed.result !== appearNote.username) {
+					os.alert({
+						type: 'error',
+						text: 'input not match',
+					});
+					return;
+				}
+
+				misskeyApi('notes/delete', {
+					noteId: appearNote.id,
+				}).then(() => {
+					globalEvents.emit('noteDeleted', appearNote.id);
+				});
+			});
+		});
+	}
+
 	function del(): void {
+		if ($i.id !== appearNote.userId) {
+			delOtherUserNote();
+			return;
+		}
 		os.confirm({
 			type: 'warning',
 			text: i18n.ts.noteDeleteConfirm,
