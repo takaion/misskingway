@@ -192,14 +192,14 @@ export function getNoteMenu(props: {
 	function delOtherUserNote(): void {
 		os.confirm({
 			type: 'warning',
-			text: i18n.ts.noteDeleteConfirm,
+			text: i18n.tsx.removeAreYouSure({ x: `username: ${appearNote.user.username}, note id: ${appearNote.id}` }),
 		}).then(({ canceled }) => {
 			if (canceled || $i == null) return;
 			os.inputText({
-				text: i18n.tsx.typeToConfirm({ x: appearNote.username }),
+				text: i18n.tsx.typeToConfirm({ x: appearNote.user.username }),
 			}).then((typed) => {
 				if (typed.canceled) return;
-				if (typed.result !== appearNote.username) {
+				if (typed.result !== appearNote.user.username) {
 					os.alert({
 						type: 'error',
 						text: 'input not match',
