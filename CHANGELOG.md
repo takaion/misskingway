@@ -1,6 +1,11 @@
 ## Unreleased
 
-###
+## 2026.7.0-mk1
+
+- 2026.5.1-mk2 + 2026.7.0
+  - 📛 が `tofu_on_fire` で出るようになんとか保持しました (参考: https://github.com/misskey-dev/misskey/commit/a09a2c2eeeb75cda407647d21efba33b943c8442 )
+
+## 2026.5.1-mk2
 
 - Feat: モデレーターまたは管理者が他のユーザーのノートを消そうとするときにより強力な確認を行うように
 

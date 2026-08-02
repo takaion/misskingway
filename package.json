@@ -1,10 +1,10 @@
 {
 	"name": "misskey",
-	"version": "2026.5.1-mk2",
+	"version": "2026.7.0-mk1",
 	"codename": "nasubi",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/misskey-dev/misskey.git"
+		"url": "https://github.com/takaion/misskingway.git"
 	},
 	"packageManager": "pnpm@11.11.0",
 	"workspaces": [
