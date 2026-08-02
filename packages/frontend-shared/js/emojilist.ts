@@ -11,10 +11,13 @@ export type UnicodeEmojiDef = {
 	category: typeof unicodeEmojiCategories[number];
 };
 
-// initial converted from https://github.com/muan/emojilib/commit/242fe68be86ed6536843b83f7e32f376468b38fb
-import _emojilist from './emojilist.json' with { type: 'json' };
+import _emojilist from '@misskey-dev/emoji-data/emojilist.json';
 
-export const emojilist: UnicodeEmojiDef[] = _emojilist.map(x => ({
+const customizedEmojiList = [
+	["📛", "tofu_on_fire", 7]
+];
+
+export const emojilist: UnicodeEmojiDef[] = [..._emojilist, ...customizedEmojiList].map(x => ({
 	name: x[1] as string,
 	char: x[0] as string,
 	category: unicodeEmojiCategories[x[2] as number],
